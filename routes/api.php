@@ -17,6 +17,7 @@ Route::get('athletes', 'AthletesController@index');
 Route::get('/get_athlete_sports/{athlete_id}', ['uses' =>'AthletesController@getAssociatedSports']);
 Route::post('add_athlete','AthletesController@store');
 Route::post('/add_athlete_sports', 'AthletesController@addSportsForAthlete');
+Route::post('/add_athlete_teams', 'AthletesController@addTeamsForAthlete');
 
 Route::get('sports', 'SportsController@index');
 Route::post('add_sport','SportsController@store');

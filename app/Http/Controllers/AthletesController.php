@@ -18,6 +18,7 @@ class AthletesController extends Controller
         return Athlete::with('sports')->findOrFail($athleteId);
     }
 
+    // Adds a Sport for Athlete
     public function addSportsForAthlete(Request $request)
     {
         $this->validate($request, [
@@ -27,6 +28,20 @@ class AthletesController extends Controller
 
         $athlete = Athlete::find($request['athlete_id']);
         $athlete->sports()->attach($request['sport_id']);
+
+        return response()->json($athlete, 201);
+    }
+
+    // Adds a Team for Athlete
+    public function addTeamsForAthlete(Request $request)
+    {
+        $this->validate($request, [
+            'athlete_id' => 'required',
+            'team_id' => 'required',
+        ]);
+
+        $athlete = Athlete::find($request['athlete_id']);
+        $athlete->teams()->attach($request['team_id']);
 
         return response()->json($athlete, 201);
     }
