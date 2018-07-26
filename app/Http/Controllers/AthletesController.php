@@ -18,10 +18,15 @@ class AthletesController extends Controller
         return Athlete::with('sports')->findOrFail($athleteId);
     }
 
-    public function addSportsForAthlete($athleteId, $sportId)
+    public function addSportsForAthlete(Request $request)
     {
-        $athlete = Athlete::find($athleteId);
-        $athlete->sports()->attach($sportId);
+        $this->validate($request, [
+            'athlete_id' => 'required',
+            'sport_id' => 'required',
+        ]);
+
+        $athlete = Athlete::find($request['athlete_id']);
+        $athlete->sports()->attach($request['sport_id']);
 
         return response()->json($athlete, 201);
     }
@@ -31,7 +36,7 @@ class AthletesController extends Controller
     {
         $this->validate($request, [
             'athlete_name' => 'required',
-            'athlete_dob' => 'required',
+            'athlete_dob' => 'required|unique:athletes,athlete_dob',
             'athlete_age' => 'required',
             'athlete_height' => 'required',
             'athlete_body_weight' => 'required',

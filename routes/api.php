@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::get('athletes', 'AthletesController@index');
 Route::get('/get_athlete_sports/{athlete_id}', ['uses' =>'AthletesController@getAssociatedSports']);
 Route::post('add_athlete','AthletesController@store');
-Route::get('/add_athlete_sports/{athlete_id}/{sport_id}', ['uses' =>'AthletesController@addSportsForAthlete']);
+Route::post('/add_athlete_sports', 'AthletesController@addSportsForAthlete');
 
 Route::get('sports', 'SportsController@index');
 Route::post('add_sport','SportsController@store');

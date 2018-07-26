@@ -17,6 +17,7 @@ class CreateAthleteSportTable extends Migration
             $table->increments('id');
             $table->integer('athlete_id')->unsigned();
             $table->integer('sport_id')->unsigned();
+            $table->unique(array('athlete_id', 'sport_id'));
             $table->timestamps();
         });
     }
