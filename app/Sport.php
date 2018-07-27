@@ -14,9 +14,9 @@ class Sport extends Model
         return $this->belongsToMany('App\Athlete');
     }
 
-    // Associated Team with this Sport
-    public function team()
+    // Associated Teams with this Sport
+    public function teams()
     {
-        return $this->belongsTo('App\Team');
+        return $this->hasMany('App\Team');
     }
 }

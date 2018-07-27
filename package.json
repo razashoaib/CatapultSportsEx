@@ -20,5 +20,8 @@
         "popper.js": "^1.12",
         "react": "^16.4.1",
         "react-dom": "^16.4.1"
+    },
+    "dependencies": {
+        "react-modal": "^3.5.1"
     }
 }

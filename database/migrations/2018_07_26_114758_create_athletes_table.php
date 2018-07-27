@@ -16,7 +16,8 @@ class CreateAthletesTable extends Migration
         Schema::create('athletes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('athlete_name');
-            $table->date('athlete_dob')->unique();
+            $table->date('athlete_dob');
+            $table->unique(array('athlete_name', 'athlete_dob'));
             $table->integer('athlete_age');
             $table->float('athlete_height');
             $table->float('athlete_body_weight');

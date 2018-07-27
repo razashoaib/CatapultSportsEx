@@ -10,7 +10,7 @@ class SportsController extends Controller
     // Returns all Sports with their respective Athletes and Teams
     public function index()
     {
-        return Sport::with('athletes')->with('team')->get();
+        return Sport::with('athletes')->with('teams')->get();
     }
 
     // Adds a Sport into the database
