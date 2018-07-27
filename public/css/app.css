@@ -10477,3 +10477,15 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+input {
+  margin: 0 10px 10px 0;
+}
+
+.login-container {
+  margin-top: 100px;
+}
+
+.register-container {
+  margin-top: 100px;
+}
+

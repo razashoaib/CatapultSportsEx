@@ -13,6 +13,7 @@ class AthletesController extends Controller
         return Athlete::with('sports')->with('teams')->get();
     }
 
+    // Returns associated Sport for the given Athlete
     public function getAssociatedSports($athleteId)
     {
         return Athlete::with('sports')->findOrFail($athleteId);

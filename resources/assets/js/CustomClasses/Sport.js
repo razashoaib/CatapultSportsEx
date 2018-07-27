@@ -15,11 +15,11 @@ function Sport(props) {
                     </tr>
                     </thead>
                     <tbody>
-                    {props.sports.map(obj =>
-                        <tr key={obj.id}>
-                            <td>{obj.sport_name} </td>
-                            <td>{ obj.teams.length > 0 ? obj.teams[0].team_name : 'none'} </td>
-                            <td>{ obj.athletes.length > 0 ? obj.athletes[0].athlete_name : 'none'} </td>
+                    {props.sports.map((item, key) =>
+                        <tr key={item.id}>
+                            <td>{item.sport_name} </td>
+                            <td>{ item.athletes.length > 0 ? item.athletes.map((subItem, j) => <span key={subItem.id} className="badge badge-success">{subItem.athlete_name}</span> ) : <span className="badge badge-warning">none</span>} </td>
+                            <td>{ item.teams.length > 0 ? item.teams.map((subItem, j) => <span key={subItem.id} className="badge badge-success">{subItem.team_name}</span> ) : <span className="badge badge-warning">none</span>} </td>
                             <td><a>Edit</a>|<a>Delete</a></td>
                         </tr>
                     )}

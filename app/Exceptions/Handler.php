@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Response;
 
 class Handler extends ExceptionHandler
 {
@@ -53,12 +54,17 @@ class Handler extends ExceptionHandler
                 'status_code' => 404
             ]);
         }
+        else if ($exception instanceof \Illuminate\Auth\AuthenticationException)
+        {
+            return response()->json([
+                'error' => $exception->getMessage()
+            ], 401);
+        }
         else
         {
             return response()->json([
-                'error' => $exception->getMessage(),
-                'status_code' => 500
-            ]);
+                'error' => $exception->getMessage()
+            ], 500);
         }
         //return parent::render($request, $exception);
     }
