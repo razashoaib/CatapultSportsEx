@@ -15,8 +15,10 @@ class CreateAthleteTeamTable extends Migration
     {
         Schema::create('athlete_team', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('athlete_id')->unsigned();
-            $table->integer('team_id')->unsigned();
+            $table->integer('athlete_id')->unsigned()->index();
+            $table->foreign('athlete_id')->references('id')->on('athletes')->onDelete('cascade');
+            $table->integer('team_id')->unsigned()->index();
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->unique(array('athlete_id', 'team_id'));
             $table->timestamps();
         });

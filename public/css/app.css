@@ -10471,6 +10471,17 @@ a.text-dark:focus {
   }
 }
 
+.linkStyle {
+  background-color: #009df4;
+  color: white;
+  cursor: pointer;
+  margin: 1px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -10481,11 +10492,32 @@ input {
   margin: 0 10px 10px 0;
 }
 
+select {
+  margin: 0 10px 10px 0;
+}
+
 .login-container {
   margin-top: 100px;
 }
 
 .register-container {
   margin-top: 100px;
+}
+
+.navbar .navbar-header,
+.navbar-collapse {
+  float: none;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.badge {
+  margin: 1px;
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    display: block;
+  }
 }
 

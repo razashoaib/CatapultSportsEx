@@ -1,41 +1,22 @@
 import React from "react";
-import * as ConstantsClass from '../Utilities/Constants.js';
+import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Team from '../CustomClasses/Team';
 
 export class TeamView extends React.Component {
     
     constructor(props) {
         super(props)
-        this.state = {
-            teams: []
-        }
-    }
-
-    componentDidMount() {
-        let self = this;
-        fetch(ConstantsClass.GET_ALL_TEAMS, {
-            method: 'GET'
-        }).then(function(response) {
-            if (response.status >= 400) {
-                throw new Error("Bad response from server");
-            }
-            return response.json();
-        }).then(function(data) {
-            self.setState({teams: data});
-        }).catch(err => {
-
-            console.log('caught it!',err);
-            this.props.history.push('/login')
-        })
     }
 
     render() {
         return (
             <div className="container">
-                <Team teams={this.state.teams}/>
+                <Link className="linkStyle" to={"/add_team"}>Add New Team</Link>
+                <Team/>
             </div>
         );
     }
 }
 
-export default TeamView
+export default withRouter(TeamView)
