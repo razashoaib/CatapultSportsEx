@@ -1493,21 +1493,22 @@ var matchPath = function matchPath(pathname) {
 
 "use strict";
 /* unused harmony export BASE_URL */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return GET_ALL_ATHLETES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return GET_ALL_SPORTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return GET_ALL_TEAMS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return GET_ALL_ATHLETES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return GET_ALL_SPORTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return GET_ALL_TEAMS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ADD_ATHLETE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return ADD_SPORT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return ADD_TEAM; });
-/* unused harmony export ADD_ATHLETE_TEAMS */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return ADD_SPORT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return ADD_TEAM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return ADD_ATHLETE_TEAMS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ADD_ATHLETE_SPORTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return UPDATE_SPORT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return UPDATE_TEAM; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return DELETE_ATHLETE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return DELETE_SPORT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return DELETE_TEAM; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return REGISTER_USER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return LOGIN_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return UPDATE_SPORT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return UPDATE_TEAM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return UPDATE_ATHLETE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return DELETE_ATHLETE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return DELETE_SPORT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return DELETE_TEAM; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return REGISTER_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return LOGIN_USER; });
 // Base URL
 var BASE_URL = "http://localhost";
 
@@ -1526,6 +1527,7 @@ var ADD_ATHLETE_SPORTS = BASE_URL + "/api/add_athlete_sports";
 // Update URLs
 var UPDATE_SPORT = BASE_URL + "/api/update_sport/";
 var UPDATE_TEAM = BASE_URL + "/api/update_team/";
+var UPDATE_ATHLETE = BASE_URL + "/api/update_athlete/";
 
 // Delete URLs
 var DELETE_ATHLETE = BASE_URL + "/api/delete_athlete/";
@@ -38002,6 +38004,8 @@ module.exports = function spread(callback) {
 
 
 
+// Here we are implementing BrowserRouter to enable routing in the application.
+
 Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
   __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */],
   null,
@@ -59860,6 +59864,8 @@ module.exports = hoistNonReactStatics;
 
 
 
+// This is a view which will be used inside BrowserRouter.
+
 var Root = function Root() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
@@ -59882,6 +59888,8 @@ var Root = function Root() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(13);
 
 
+
+// This component is provide a navigation bar inside the application.
 
 var HeaderView = function HeaderView(props) {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -59989,11 +59997,10 @@ var HeaderView = function HeaderView(props) {
 
 
 
-// The Main component renders one of the three provided
-// Routes (provided that one matches). Both the /roster
-// and /schedule routes will match any pathname that starts
-// with /roster or /schedule. The / route will only match
+// The Main component renders one of the following provided
+// Routes (provided that one matches). The / route will only match
 // when the pathname is exactly the string "/"
+
 var MasterView = function MasterView() {
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'main',
@@ -60038,6 +60045,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+// This component is used to render Athlete.
 
 var AthleteView = function (_React$Component) {
     _inherits(AthleteView, _React$Component);
@@ -60092,6 +60101,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// This component renders Sport view.
 var SportView = function (_React$Component) {
     _inherits(SportView, _React$Component);
 
@@ -60149,6 +60159,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+//This class consists the functionality to edit, delete and show Sports.
+
 var Sport = function (_React$Component) {
     _inherits(Sport, _React$Component);
 
@@ -60202,7 +60214,7 @@ var Sport = function (_React$Component) {
             var _this2 = this;
 
             var self = this;
-            fetch(__WEBPACK_IMPORTED_MODULE_3__Utilities_Constants_js__["i" /* GET_ALL_SPORTS */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_3__Utilities_Constants_js__["j" /* GET_ALL_SPORTS */], {
                 method: 'GET',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -60233,7 +60245,7 @@ var Sport = function (_React$Component) {
 
             var self = this;
 
-            fetch(__WEBPACK_IMPORTED_MODULE_3__Utilities_Constants_js__["m" /* UPDATE_SPORT */] + this.state.id, {
+            fetch(__WEBPACK_IMPORTED_MODULE_3__Utilities_Constants_js__["o" /* UPDATE_SPORT */] + this.state.id, {
                 method: 'POST',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -60266,7 +60278,7 @@ var Sport = function (_React$Component) {
             };
 
             var self = this;
-            fetch(__WEBPACK_IMPORTED_MODULE_3__Utilities_Constants_js__["f" /* DELETE_SPORT */] + sport.id, {
+            fetch(__WEBPACK_IMPORTED_MODULE_3__Utilities_Constants_js__["g" /* DELETE_SPORT */] + sport.id, {
                 method: 'POST',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -60470,6 +60482,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// This component renders Team view.
+
 var TeamView = function (_React$Component) {
     _inherits(TeamView, _React$Component);
 
@@ -60526,6 +60540,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+//This class consists the functionality to edit, delete and show Teams.
 
 var Team = function (_React$Component) {
     _inherits(Team, _React$Component);
@@ -60585,7 +60601,7 @@ var Team = function (_React$Component) {
 
             var self = this;
 
-            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["j" /* GET_ALL_TEAMS */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["k" /* GET_ALL_TEAMS */], {
                 method: 'GET',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -60598,7 +60614,7 @@ var Team = function (_React$Component) {
                 return response.json();
             }).then(function (data) {
 
-                fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["i" /* GET_ALL_SPORTS */], {
+                fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["j" /* GET_ALL_SPORTS */], {
                     method: 'GET',
                     headers: new Headers({
                         'Authorization': window.sessionStorage.getItem('token'),
@@ -60639,7 +60655,7 @@ var Team = function (_React$Component) {
 
             var self = this;
 
-            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["n" /* UPDATE_TEAM */] + this.state.id, {
+            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["p" /* UPDATE_TEAM */] + this.state.id, {
                 method: 'POST',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -60672,7 +60688,7 @@ var Team = function (_React$Component) {
             };
             var self = this;
 
-            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["g" /* DELETE_TEAM */] + team.id, {
+            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["h" /* DELETE_TEAM */] + team.id, {
                 method: 'POST',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -60697,7 +60713,7 @@ var Team = function (_React$Component) {
         key: 'componentWillMount',
         value: function componentWillMount() {
             var self = this;
-            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["i" /* GET_ALL_SPORTS */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["j" /* GET_ALL_SPORTS */], {
                 method: 'GET',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -60918,7 +60934,6 @@ var Team = function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Utilities_Constants__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Utilities_Configuration__ = __webpack_require__(123);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -60932,6 +60947,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// This component is used for Logging in.
 
 var LoginView = function (_React$Component) {
     _inherits(LoginView, _React$Component);
@@ -60961,7 +60977,7 @@ var LoginView = function (_React$Component) {
             };
             var self = this;
             console.log(data);
-            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants__["k" /* LOGIN_USER */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants__["l" /* LOGIN_USER */], {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -61067,6 +61083,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// This component is used fot Registering a user.
+
 var RegisterView = function (_React$Component) {
     _inherits(RegisterView, _React$Component);
 
@@ -61097,7 +61115,7 @@ var RegisterView = function (_React$Component) {
             };
             var self = this;
             console.log(data);
-            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["l" /* REGISTER_USER */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["m" /* REGISTER_USER */], {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -61204,8 +61222,13 @@ var Child = function Child() {
 /* unused harmony export Athlete */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_modal__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_modal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_modal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(13);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -61216,6 +61239,10 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
+
+//This class consists the functionlity to edit, delete and show Athletes.
+
 var Athlete = function (_React$Component) {
     _inherits(Athlete, _React$Component);
 
@@ -61225,18 +61252,80 @@ var Athlete = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Athlete.__proto__ || Object.getPrototypeOf(Athlete)).call(this, props));
 
         _this.state = {
-            athletes: []
+            athletes: [],
+            athlete_sports: [],
+            athlete_teams: [],
+            sports: [],
+            teams: [],
+            sport_id_array: [],
+            team_id_array: [],
+            athlete_name: '',
+            athlete_dob: '',
+            athlete_age: '',
+            athlete_height: '',
+            athlete_body_weight: '',
+            msg: '',
+            id: 0
+
         };
+
+        _this.openModal = _this.openModal.bind(_this);
+        _this.closeModal = _this.closeModal.bind(_this);
+        _this.logChange = _this.logChange.bind(_this); // We capture the value and change state as user changes the value here.
+        _this.handleEdit = _this.handleEdit.bind(_this); // Function where we submit data
         return _this;
     }
 
     _createClass(Athlete, [{
+        key: 'openModal',
+        value: function openModal(athlete) {
+            this.setState({
+                athletes: [],
+                modalIsOpen: true,
+                athlete_sports: athlete.sports,
+                athlete_teams: athlete.teams,
+                athlete_name: athlete.athlete_name,
+                athlete_dob: athlete.athlete_dob,
+                athlete_age: athlete.athlete_age,
+                athlete_height: athlete.athlete_height,
+                athlete_body_weight: athlete.athlete_body_weight,
+                id: athlete.id
+            });
+        }
+    }, {
+        key: 'closeModal',
+        value: function closeModal() {
+            this.setState({
+                modalIsOpen: false
+            });
+
+            this.props.history.push('/athletes');
+        }
+    }, {
+        key: 'logChange',
+        value: function logChange(e) {
+            this.setState(_defineProperty({}, e.target.name, e.target.value));
+        }
+    }, {
+        key: 'logChangeForMultiSelect',
+        value: function logChangeForMultiSelect(e) {
+            var options = e.target.options;
+            var value = [];
+            for (var i = 0, l = options.length; i < l; i++) {
+                if (options[i].selected) {
+                    value.push(options[i].value);
+                }
+            }
+
+            this.setState(_defineProperty({}, e.target.name, value));
+        }
+    }, {
         key: 'componentDidMount',
         value: function componentDidMount() {
             var _this2 = this;
 
             var self = this;
-            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["h" /* GET_ALL_ATHLETES */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["i" /* GET_ALL_ATHLETES */], {
                 method: 'GET',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -61248,10 +61337,164 @@ var Athlete = function (_React$Component) {
                 }
                 return response.json();
             }).then(function (data) {
+                self.getAllTeams(self);
                 self.setState({ athletes: data });
             }).catch(function (err) {
                 _this2.props.history.push('/login');
                 console.log('caught it!', err);
+            });
+        }
+    }, {
+        key: 'getAllSelectedTeams',
+        value: function getAllSelectedTeams(teamObj) {
+            var teamsId = [];
+            teamObj.map(function (item, key) {
+                return teamsId.push(item.id);
+            });
+            return teamsId;
+        }
+    }, {
+        key: 'getAllSelectedSports',
+        value: function getAllSelectedSports(sportObj) {
+            var sportsId = [];
+            sportObj.map(function (item, key) {
+                return sportsId.push(item.id);
+            });
+            return sportsId;
+        }
+    }, {
+        key: 'getAllTeams',
+        value: function getAllTeams(context) {
+            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["k" /* GET_ALL_TEAMS */], {
+                method: 'GET',
+                headers: new Headers({
+                    'Authorization': window.sessionStorage.getItem('token'),
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                })
+            }).then(function (response) {
+                if (response.status >= 400) {
+                    throw new Error("Bad response from server");
+                }
+                return response.json();
+            }).then(function (data) {
+                context.getAllSports(context);
+                context.setState({ teams: data });
+            }).catch(function (err) {
+                context.history.push('/login');
+                console.log('caught it!', err);
+            });
+        }
+    }, {
+        key: 'getAllSports',
+        value: function getAllSports(context) {
+            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["j" /* GET_ALL_SPORTS */], {
+                method: 'GET',
+                headers: new Headers({
+                    'Authorization': window.sessionStorage.getItem('token'),
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                })
+            }).then(function (response) {
+                if (response.status >= 400) {
+                    throw new Error("Bad response from server");
+                }
+                return response.json();
+            }).then(function (data) {
+                context.setState({ sports: data });
+            }).catch(function (err) {
+                context.history.push('/login');
+                console.log('caught it!', err);
+            });
+        }
+    }, {
+        key: 'handleEdit',
+        value: function handleEdit(event) {
+
+            //Edit functionality
+            event.preventDefault();
+
+            var param = {
+                athlete_name: this.state.athlete_name,
+                athlete_dob: this.state.athlete_dob,
+                athlete_age: this.state.athlete_age,
+                athlete_height: this.state.athlete_height,
+                athlete_body_weight: this.state.athlete_body_weight
+            };
+
+            var self = this;
+
+            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["n" /* UPDATE_ATHLETE */] + this.state.id, {
+                method: 'POST',
+                headers: new Headers({
+                    'Authorization': window.sessionStorage.getItem('token'),
+                    'Content-Type': 'application/json'
+                }),
+                body: JSON.stringify(param)
+            }).then(function (response) {
+                if (response.status >= 400) {
+                    throw new Error("Bad response from server");
+                }
+                return response.json();
+            }).then(function (data) {
+                console.log(data);
+                self.closeModal();
+                if (data) {
+
+                    // Code to add Sports And Teams For Athlete
+
+                    var athleteSportsData = {
+                        'athlete_id': data.id,
+                        'sport_id_array': self.state.sport_id_array
+                    };
+                    fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["b" /* ADD_ATHLETE_SPORTS */], {
+                        method: 'POST',
+                        headers: new Headers({
+                            'Authorization': window.sessionStorage.getItem('token'),
+                            'Content-Type': 'application/json'
+                        }),
+                        body: JSON.stringify(athleteSportsData)
+                    }).then(function (response) {
+                        if (response.status >= 400) {
+                            throw new Error("Bad response from server");
+                        }
+                        return response.json();
+                    }).then(function (data) {
+
+                        // For Team ids
+                        var athleteTeamsData = {
+                            'athlete_id': data.id,
+                            'team_id_array': self.state.team_id_array
+                        };
+                        fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["c" /* ADD_ATHLETE_TEAMS */], {
+                            method: 'POST',
+                            headers: new Headers({
+                                'Authorization': window.sessionStorage.getItem('token'),
+                                'Content-Type': 'application/json'
+                            }),
+                            body: JSON.stringify(athleteTeamsData)
+                        }).then(function (response) {
+                            if (response.status >= 400) {
+                                throw new Error("Bad response from server");
+                            }
+                            return response.json();
+                        }).then(function (data) {
+                            self.setState({
+                                msg: "Data has been edited."
+                            });
+                            self.componentDidMount();
+                        }).catch(function (err) {
+                            self.props.history.push('/login');
+                            console.log('caught it!', err);
+                        });
+                        //...
+                    }).catch(function (err) {
+                        self.props.history.push('/login');
+                        console.log('caught it!', err);
+                    });
+
+                    //...
+                }
+            }).catch(function (err) {
+                console.log(err);
             });
         }
     }, {
@@ -61261,7 +61504,7 @@ var Athlete = function (_React$Component) {
             var data = {
                 id: athlete.id
             };
-            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["e" /* DELETE_ATHLETE */] + athlete.id, {
+            fetch(__WEBPACK_IMPORTED_MODULE_2__Utilities_Constants_js__["f" /* DELETE_ATHLETE */] + athlete.id, {
                 method: 'POST',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -61284,7 +61527,7 @@ var Athlete = function (_React$Component) {
         }
     }, {
         key: 'render',
-        value: function render(props) {
+        value: function render() {
             var _this3 = this;
 
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -61423,7 +61666,9 @@ var Athlete = function (_React$Component) {
                                         null,
                                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                             'a',
-                                            { className: 'linkStyle' },
+                                            { className: 'linkStyle', onClick: function onClick() {
+                                                    return _this3.openModal(item);
+                                                } },
                                             'Edit'
                                         ),
                                         '|',
@@ -61438,6 +61683,143 @@ var Athlete = function (_React$Component) {
                                 );
                             })
                         )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        __WEBPACK_IMPORTED_MODULE_1_react_modal___default.a,
+                        {
+
+                            style: { 'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto' },
+                            isOpen: this.state.modalIsOpen,
+                            onRequestClose: this.closeModal,
+                            ariaHideApp: false,
+                            contentLabel: 'Edit Athlete' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'form',
+                            { onSubmit: this.handleEdit.bind(this), method: 'POST', className: 'form-signin col-4' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                { className: 'modal-heading' },
+                                'Update Athlete'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                null,
+                                'Athlete Name'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.logChange.bind(this), name: 'athlete_name', type: 'text', value: this.state.athlete_name, id: 'inputName', className: 'form-control', placeholder: 'Athlete Name', validations: ['required'], autoFocus: true }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                { htmlFor: 'inputDob' },
+                                'Athlete DOB'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.logChange.bind(this), name: 'athlete_dob', type: 'date', value: this.state.athlete_dob, id: 'inputDob', className: 'form-control', placeholder: 'Athlete Dob', validations: ['required'] }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                { htmlFor: 'inputAge' },
+                                'Athlete Age'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.logChange.bind(this), name: 'athlete_age', type: 'number', value: this.state.athlete_age, min: '0', max: '100', id: 'inputAge', className: 'form-control', validations: ['required'] }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                { htmlFor: 'inputHeight' },
+                                'Athlete Height (CMs)'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.logChange.bind(this), name: 'athlete_height', type: 'number', value: this.state.athlete_height, step: 'any', min: '0', max: '350', id: 'inputHeight', className: 'form-control', validations: ['required'] }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                { htmlFor: 'inputBodyWeight' },
+                                'Athlete Body Weight (KGs)'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { onChange: this.logChange.bind(this), name: 'athlete_body_weight', type: 'number', value: this.state.athlete_body_weight, step: 'any', min: '0', max: '400', id: 'inputBodyWeight', className: 'form-control', validations: ['required'] }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                { htmlFor: 'inputSport' },
+                                'Associated Sports'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            this.state.athlete_sports.length > 0 ? this.state.athlete_sports.map(function (subItem, j) {
+                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    { key: subItem.id, className: 'badge badge-success' },
+                                    subItem.sport_name
+                                );
+                            }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'badge badge-warning' },
+                                'none'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                { htmlFor: 'inputTeam' },
+                                'Associated Teams'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            this.state.athlete_teams.length > 0 ? this.state.athlete_teams.map(function (subItem, j) {
+                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    { key: subItem.id, className: 'badge badge-success' },
+                                    subItem.team_name
+                                );
+                            }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: 'badge badge-warning' },
+                                'none'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                { htmlFor: 'inputSport' },
+                                'All Sports'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'select',
+                                { multiple: 'multiple', className: 'custom-select', id: 'inputSport', onChange: this.logChangeForMultiSelect.bind(this), name: 'sport_id_array' },
+                                this.state.sports.map(function (item, key) {
+                                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'option',
+                                        { key: key, value: item.id },
+                                        item.sport_name
+                                    );
+                                })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'small',
+                                { id: 'logoHelp', className: 'form-text text-muted' },
+                                'Update the associated Sports for this Athlete from above.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                { htmlFor: 'inputTeam' },
+                                'All Teams'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'select',
+                                { multiple: 'multiple', className: 'custom-select', id: 'inputTeam', onChange: this.logChangeForMultiSelect.bind(this), name: 'team_id_array' },
+                                this.state.teams.map(function (item, key) {
+                                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'option',
+                                        { key: key, value: item.id },
+                                        item.team_name
+                                    );
+                                })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'small',
+                                { id: 'logoHelp', className: 'form-text text-muted' },
+                                'Update the associated Teams for this Athlete from above.'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'submit-section' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'button',
+                                    { className: 'btn btn-lg btn-primary btn-block', type: 'submit' },
+                                    'Update'
+                                )
+                            )
+                        )
                     )
                 )
             );
@@ -61447,7 +61829,7 @@ var Athlete = function (_React$Component) {
     return Athlete;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["a"] = (Athlete);
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["e" /* withRouter */])(Athlete));
 
 /***/ }),
 /* 118 */,
@@ -61455,17 +61837,7 @@ var Athlete = function (_React$Component) {
 /* 120 */,
 /* 121 */,
 /* 122 */,
-/* 123 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export HEADER_OBJECT */
-var HEADER_OBJECT = new Headers({
-    'Authorization': window.sessionStorage.getItem('token'),
-    'Content-Type': 'application/x-www-form-urlencoded'
-});
-
-/***/ }),
+/* 123 */,
 /* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -62853,6 +63225,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// This component is used for adding a Sport.
 var AddSportView = function (_React$Component) {
     _inherits(AddSportView, _React$Component);
 
@@ -62878,7 +63251,7 @@ var AddSportView = function (_React$Component) {
             };
             var self = this;
             console.log(data);
-            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["c" /* ADD_SPORT */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["d" /* ADD_SPORT */], {
                 method: 'POST',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -62977,6 +63350,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// This component is used for adding a Team and associating a Sport for that Team.
+
 var AddTeamView = function (_React$Component) {
     _inherits(AddTeamView, _React$Component);
 
@@ -63002,7 +63377,7 @@ var AddTeamView = function (_React$Component) {
             var _this2 = this;
 
             var self = this;
-            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["i" /* GET_ALL_SPORTS */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["j" /* GET_ALL_SPORTS */], {
                 method: 'GET',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -63031,7 +63406,7 @@ var AddTeamView = function (_React$Component) {
             };
             var self = this;
             console.log(data);
-            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["d" /* ADD_TEAM */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["e" /* ADD_TEAM */], {
                 method: 'POST',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -63167,6 +63542,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// This component is used for adding an Athlete and associating Teams and Sports for that Athlete
 var AddAthleteView = function (_React$Component) {
     _inherits(AddAthleteView, _React$Component);
 
@@ -63197,7 +63573,7 @@ var AddAthleteView = function (_React$Component) {
             var _this3 = this;
 
             var self = this;
-            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["i" /* GET_ALL_SPORTS */], {
+            fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["j" /* GET_ALL_SPORTS */], {
                 method: 'GET',
                 headers: new Headers({
                     'Authorization': window.sessionStorage.getItem('token'),
@@ -63213,7 +63589,7 @@ var AddAthleteView = function (_React$Component) {
 
                 self.setState({ sports: data });
 
-                fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["j" /* GET_ALL_TEAMS */], {
+                fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["k" /* GET_ALL_TEAMS */], {
                     method: 'GET',
                     headers: new Headers({
                         'Authorization': window.sessionStorage.getItem('token'),
@@ -63267,10 +63643,10 @@ var AddAthleteView = function (_React$Component) {
 
                 if (data) {
 
-                    // Code to enter Team ids
+                    // Code to enter Sport and Athlete ids
 
                     var athleteSportsData = {
-                        'athlete_id': data.athlete_id,
+                        'athlete_id': data.id,
                         'sport_id_array': self.state.sport_id_array
                     };
                     fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["b" /* ADD_ATHLETE_SPORTS */], {
@@ -63286,19 +63662,42 @@ var AddAthleteView = function (_React$Component) {
                         }
                         return response.json();
                     }).then(function (data) {
-                        self.setState({ teams: data });
+
+                        // For Team ids
+                        var athleteTeamsData = {
+                            'athlete_id': data.id,
+                            'team_id_array': self.state.team_id_array
+                        };
+                        fetch(__WEBPACK_IMPORTED_MODULE_1__Utilities_Constants_js__["c" /* ADD_ATHLETE_TEAMS */], {
+                            method: 'POST',
+                            headers: new Headers({
+                                'Authorization': window.sessionStorage.getItem('token'),
+                                'Content-Type': 'application/json'
+                            }),
+                            body: JSON.stringify(athleteTeamsData)
+                        }).then(function (response) {
+                            if (response.status >= 400) {
+                                throw new Error("Bad response from server");
+                            }
+                            return response.json();
+                        }).then(function (data) {
+                            self.setState({ msg: "Added Athlete successfully" });
+                        }).catch(function (err) {
+                            self.props.history.push('/login');
+                            console.log('caught it!', err);
+                        });
+                        //...
                     }).catch(function (err) {
                         self.props.history.push('/login');
                         console.log('caught it!', err);
                     });
 
-                    //..
+                    //...
 
                     // Code to add Sport Ids
 
                     //..
 
-                    self.setState({ msg: "Added Athlete successfully" });
                 }
             }).catch(function (err) {
                 console.log(err);
@@ -63308,6 +63707,19 @@ var AddAthleteView = function (_React$Component) {
         key: 'logChange',
         value: function logChange(e) {
             this.setState(_defineProperty({}, e.target.name, e.target.value));
+        }
+    }, {
+        key: 'logChangeForMultiSelect',
+        value: function logChangeForMultiSelect(e) {
+            var options = e.target.options;
+            var value = [];
+            for (var i = 0, l = options.length; i < l; i++) {
+                if (options[i].selected) {
+                    value.push(options[i].value);
+                }
+            }
+
+            this.setState(_defineProperty({}, e.target.name, value));
         }
     }, {
         key: 'render',
@@ -63364,7 +63776,7 @@ var AddAthleteView = function (_React$Component) {
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'select',
-                            { multiple: true, className: 'custom-select', id: 'inputSport', onChange: this.logChange.bind(this), name: 'sport_id_array' },
+                            { multiple: 'multiple', className: 'custom-select', id: 'inputSport', onChange: this.logChangeForMultiSelect.bind(this), name: 'sport_id_array' },
                             this.state.sports.map(function (item, key) {
                                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'option',
@@ -63385,7 +63797,7 @@ var AddAthleteView = function (_React$Component) {
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'select',
-                            { multiple: true, className: 'custom-select', id: 'inputTeam', onChange: this.logChange.bind(this), name: 'team_id_array' },
+                            { multiple: 'multiple', className: 'custom-select', id: 'inputTeam', onChange: this.logChangeForMultiSelect.bind(this), name: 'team_id_array' },
                             this.state.teams.map(function (item, key) {
                                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'option',

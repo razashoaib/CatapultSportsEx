@@ -10500,6 +10500,17 @@ select {
   margin-top: 100px;
 }
 
+.react-modal {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.modal-heading {
+  margin-top: 20px;
+  font-size: larger;
+  font-weight: bolder;
+}
+
 .register-container {
   margin-top: 100px;
 }

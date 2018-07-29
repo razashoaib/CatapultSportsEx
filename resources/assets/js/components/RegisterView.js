@@ -1,6 +1,8 @@
 import React from "react";
 import * as ConstantsClass from '../Utilities/Constants.js';
 
+// This component is used fot Registering a user.
+
 export class RegisterView extends React.Component {
 
     constructor(props) {

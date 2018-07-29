@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Sport from '../CustomClasses/Sport';
 import { withRouter } from 'react-router-dom';
 
+// This component renders Sport view.
 export class SportView extends React.Component {
     
     constructor(props) {

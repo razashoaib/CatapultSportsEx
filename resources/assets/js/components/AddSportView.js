@@ -1,6 +1,7 @@
 import React from "react";
 import * as ConstantsClass from '../Utilities/Constants.js';
 
+// This component is used for adding a Sport.
 export class AddSportView extends React.Component {
 
     constructor(props) {

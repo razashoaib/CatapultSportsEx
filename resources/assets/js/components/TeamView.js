@@ -3,6 +3,9 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Team from '../CustomClasses/Team';
 
+
+// This component renders Team view.
+
 export class TeamView extends React.Component {
     
     constructor(props) {

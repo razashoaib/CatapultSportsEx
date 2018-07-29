@@ -16,6 +16,7 @@ export const ADD_ATHLETE_SPORTS = BASE_URL + "/api/add_athlete_sports";
 // Update URLs
 export const UPDATE_SPORT = BASE_URL + "/api/update_sport/";
 export const UPDATE_TEAM = BASE_URL + "/api/update_team/";
+export const UPDATE_ATHLETE = BASE_URL + "/api/update_athlete/";
 
 // Delete URLs
 export const DELETE_ATHLETE = BASE_URL + "/api/delete_athlete/";

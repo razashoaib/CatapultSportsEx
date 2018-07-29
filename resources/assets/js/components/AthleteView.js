@@ -3,6 +3,8 @@ import Athlete from '../CustomClasses/Athlete';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
+// This component is used to render Athlete.
+
 export class AthleteView extends React.Component {
     
 

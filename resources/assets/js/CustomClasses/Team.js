@@ -3,6 +3,8 @@ import { withRouter } from 'react-router-dom';
 import * as ConstantsClass from '../Utilities/Constants.js';
 import Modal from 'react-modal';
 
+//This class consists the functionality to edit, delete and show Teams.
+
 export class Team extends React.Component {
 
     constructor(props) {

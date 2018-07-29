@@ -1,6 +1,7 @@
 import React from "react";
 import * as ConstantsClass from "../Utilities/Constants";
-import * as Configuration from "../Utilities/Configuration";
+
+// This component is used for Logging in.
 
 export class LoginView extends React.Component {
 

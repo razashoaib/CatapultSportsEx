@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
+// This component is provide a navigation bar inside the application.
+
 export const HeaderView = (props) => {
     return (
 

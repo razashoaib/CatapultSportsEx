@@ -21,3 +21,28 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Athlete::class, function (Faker $faker) {
+    return [
+        'athlete_name' => $faker->unique()->name,
+        'athlete_dob' => '1990/05/01',
+        'athlete_age' => $faker->numberBetween(1,100),
+        'athlete_height' => $faker->numberBetween(100,350),
+        'athlete_body_weight' => $faker->numberBetween(100,300),
+    ];
+});
+
+$factory->define(App\Sport::class, function (Faker $faker) {
+    return [
+        'sport_name' => 'Sport ' . $faker->unique()->company,
+    ];
+});
+
+$factory->define(App\Team::class, function (Faker $faker) {
+    return [
+        'team_name' => $faker->unique()->company. ' Team',
+        'team_logo' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc_oag6XbBq3XUBbo1ZZaXNt3UvCyozzLdiKiVfmNMzO0eZKiJ',
+        'sport_id' => $faker->numberBetween(1,20),
+    ];
+});
+

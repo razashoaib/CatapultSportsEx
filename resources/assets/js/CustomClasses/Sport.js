@@ -3,6 +3,9 @@ import Modal from 'react-modal';
 import { withRouter } from 'react-router-dom';
 import * as ConstantsClass from '../Utilities/Constants.js';
 
+
+//This class consists the functionality to edit, delete and show Sports.
+
 export class Sport extends React.Component {
 
     constructor(props) {

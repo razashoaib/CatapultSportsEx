@@ -1,6 +1,8 @@
 import React from "react";
 import * as ConstantsClass from '../Utilities/Constants.js';
 
+
+// This component is used for adding an Athlete and associating Teams and Sports for that Athlete
 export class AddAthleteView extends React.Component {
 
     constructor(props) {
@@ -90,10 +92,10 @@ export class AddAthleteView extends React.Component {
 
             if(data){
 
-                // Code to enter Team ids
+                // Code to enter Sport and Athlete ids
 
                 var athleteSportsData = {
-                  'athlete_id' : data.athlete_id,
+                  'athlete_id' : data.id,
                   'sport_id_array': self.state.sport_id_array
                 };
                 fetch(ConstantsClass.ADD_ATHLETE_SPORTS, {
@@ -109,19 +111,44 @@ export class AddAthleteView extends React.Component {
                     }
                     return response.json();
                 }).then(function(data) {
-                    self.setState({teams: data});
+
+                    // For Team ids
+                    var athleteTeamsData = {
+                        'athlete_id' : data.id,
+                        'team_id_array': self.state.team_id_array
+                    };
+                    fetch(ConstantsClass.ADD_ATHLETE_TEAMS, {
+                        method: 'POST',
+                        headers: new Headers({
+                            'Authorization': window.sessionStorage.getItem('token'),
+                            'Content-Type': 'application/json'
+                        }),
+                        body: JSON.stringify(athleteTeamsData)
+                    }).then(function(response) {
+                        if (response.status >= 400) {
+                            throw new Error("Bad response from server");
+                        }
+                        return response.json();
+                    }).then(function(data) {
+                        self.setState({msg: "Added Athlete successfully"});
+                    }).catch(err => {
+                        self.props.history.push('/login');
+                        console.log('caught it!',err);
+                    })
+                    //...
+
                 }).catch(err => {
                     self.props.history.push('/login');
                     console.log('caught it!',err);
                 })
 
-                //..
+                //...
 
                 // Code to add Sport Ids
 
                 //..
 
-                self.setState({msg: "Added Athlete successfully"});
+
             }
         }).catch(function(err) {
             console.log(err)
@@ -130,6 +157,18 @@ export class AddAthleteView extends React.Component {
 
     logChange(e) {
         this.setState({[e.target.name]: e.target.value});
+    }
+
+    logChangeForMultiSelect(e) {
+        var options = e.target.options;
+        var value = [];
+        for (var i = 0, l = options.length; i < l; i++) {
+            if (options[i].selected) {
+                value.push(options[i].value);
+            }
+        }
+
+        this.setState({[e.target.name]: value});
     }
 
     render() {
@@ -152,7 +191,7 @@ export class AddAthleteView extends React.Component {
                         <input onChange={this.logChange.bind(this)} name="athlete_body_weight" type="number" step="any" min="0" max="400" id="inputBodyWeight" className="form-control" required />
 
                         <label htmlFor="inputSport" >Associated Sports</label>
-                        <select multiple className="custom-select" id="inputSport" onChange={this.logChange.bind(this)} name="sport_id_array">
+                        <select multiple="multiple" className="custom-select" id="inputSport" onChange={this.logChangeForMultiSelect.bind(this)} name="sport_id_array">
                             {this.state.sports.map((item, key) =>
                                 <option key={key} value={item.id}>{item.sport_name}</option>
                             )}
@@ -160,7 +199,7 @@ export class AddAthleteView extends React.Component {
                         <small id="logoHelp" className="form-text text-muted">Please add a sport first if its empty above.</small>
 
                         <label htmlFor="inputTeam" >Associated Teams</label>
-                        <select multiple className="custom-select" id="inputTeam" onChange={this.logChange.bind(this)} name="team_id_array">
+                        <select multiple="multiple" className="custom-select" id="inputTeam" onChange={this.logChangeForMultiSelect.bind(this)} name="team_id_array">
                             {this.state.teams.map((item, key) =>
                                 <option key={key} value={item.id}>{item.team_name}</option>
                             )}
