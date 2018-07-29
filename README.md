@@ -72,7 +72,7 @@ The goal of this project is to create an API and simple Front-end to demonstrate
       ```
 - After running the commands successfully, if your server is not running on `localhost`, goto `/resources/assets/js/Utilities/Constants.js` and change the `export const BASE_URL = "http://localhost";` variable to your server's base URL.
 
-- Run `npm run dev` and go to http://localhost from your browser to see the app in action.
+- Run `npm run dev` and go to http://localhost from your browser to see the app in action (The password for all the seeded users is **secret**, pickup any user email from the created users in **users** table).
 
 ### Screenshots
 
