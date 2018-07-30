@@ -9,6 +9,7 @@ The goal of this project is to create an API and simple Front-end to demonstrate
 
 - Make sure you are using XAMPP, WAMPP or any other Web Server with MySQL enabled for this application to work, the Server should be up and running.
 - Clone the project and put it inside htdocs (or whatever directory your server is using).
+- Create a database `CatapultSportsDB` (could be any name) to use it in .env file.
 - Create a .env file in the root of your project.
   - The .env file should look similar to this:
     ```
@@ -21,7 +22,7 @@ The goal of this project is to create an API and simple Front-end to demonstrate
     LOG_CHANNEL=stack
 
     DB_CONNECTION=mysql
-    DB_HOST=mysql
+    DB_HOST=localhost (this should be your db host)
     DB_PORT=3306
     DB_DATABASE=CatapultSportsDB
     DB_USERNAME=shoaib
@@ -56,23 +57,21 @@ The goal of this project is to create an API and simple Front-end to demonstrate
     - Make sure to change DB_CONNECTION, DB_HOST, DB_DATABASE, DB_USERNAME, DB_PASSWORD with respect to your DB credentials.
     - The database configuration should be same in the `config\database.php` file.
     
-- Now run the following command:
-  - `npm run build-project` if this command doesn't work successfully, run the below commands in sequence and try to fix the        problem manually:
-      ```
-      composer install
-      composer update
-      php artisan key:generate
-      php artisan preset react
-      npm install && npm run dev
-      php artisan migrate:install
-      php artisan migrate
-      php artisan passport:install
-      php artisan db:seed
-      
-      ```
+- Now run the following set of commands:
+  ```
+  composer install
+  composer update
+  php artisan key:generate
+  npm run build-project
+  php artisan migrate:install
+  php artisan migrate
+  php artisan passport:install
+  php artisan db:seed
+  ```
+- If you get `Specified key was too long; max key length is 767 bytes` execption after running `php artisan migrate`, goto `app/Providers/AppServiceProvider.php`, add `Schema::defaultStringLength(191);` inside `boot()` function and don't forget to import `use Illuminate\Support\Facades\Schema;`. Now you need to drop all tables from db if you reach here and run "php artisan migrate" again. From here continue using the remaining commands from the above list.
 - After running the commands successfully, if your server is not running on `localhost`, goto `/resources/assets/js/Utilities/Constants.js` and change the `export const BASE_URL = "http://localhost";` variable to your server's base URL.
 
-- Run `npm run dev` and go to http://localhost from your browser to see the app in action (The password for all the seeded users is **secret**, pickup any user email from the created users in **users** table).
+- Run `npm run prod` and go to http://localhost from your browser to see the app in action (The password for all the seeded users is **secret**, pickup any user email from the created users in **users** table).
 
 ### Screenshots
 
