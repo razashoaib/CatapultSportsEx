@@ -69,10 +69,9 @@ The goal of this project is to create an API and simple Front-end to demonstrate
   php artisan db:seed
   ```
 - If you get `Specified key was too long; max key length is 767 bytes` execption after running `php artisan migrate`, goto `app/Providers/AppServiceProvider.php`, add `Schema::defaultStringLength(191);` inside `boot()` function and don't forget to import `use Illuminate\Support\Facades\Schema;`. Now you need to drop all tables from db if you reach here and run "php artisan migrate" again. From here continue using the remaining commands from the above list.
-- After running the commands successfully, if your server is not running on `localhost`, goto `/resources/assets/js/Utilities/Constants.js` and change the `export const BASE_URL = "http://localhost";` variable to your server's base URL.
+- After running the commands successfully, if this application is not hosted on `localhost` and running on `localhost/react-crud` for instance, goto `/resources/assets/js/Utilities/Constants.js` and change the `export const BASE_URL = "http://localhost";` variable to `export const BASE_URL = "http://localhost/react-crud";`. Change the `APP_URL` in `.env` and `url` in `config/app.php` files as well. Go to `/resources/assets/js/components/Main.js` and alter this line `<BrowserRouter>` to `<BrowserRouter basename="/react-crud" >`.
 - Make sure `/resources/assets/js/app.js` file has this line `import Main from './components/Main';` at the end.
-
-- Run `npm run prod` and go to http://localhost from your browser to see the app in action (The password for all the seeded users is **secret**, pickup any user email from the created users in **users** table).
+- Run `npm run prod` and go to http://localhost (Or application's base URL) from your browser to see the app in action (The password for all the seeded users is **secret**, pickup any user email from the created users in **users** table).
 
 ### Screenshots
 
